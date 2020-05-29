@@ -1,13 +1,22 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Duck/walk1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/StateMachine.gd" type="Script" id=2]
-[ext_resource path="res://Duck/States/Walk.gd" type="Script" id=3]
-[ext_resource path="res://Duck/States/Fly.gd" type="Script" id=4]
+[ext_resource path="res://Duck/States/Move.gd" type="Script" id=3]
+[ext_resource path="res://Duck/States/Walk.gd" type="Script" id=4]
 [ext_resource path="res://Duck/walk2.png" type="Texture" id=5]
 
+[sub_resource type="GDScript" id=3]
+script/source = "extends Area2D
+
+
+func _enter_tree():
+	for state in $StateMachine.get_children():
+		state.floor_height = global_position.y
+"
+
 [sub_resource type="CircleShape2D" id=1]
-radius = 84.5413
+radius = 29.6746
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -18,24 +27,34 @@ animations = [ {
 } ]
 
 [node name="Duck" type="Area2D"]
+script = SubResource( 3 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 21.7123, -53.4458 )
+position = Vector2( 8.10897, -19.5574 )
+scale = Vector2( 0.342294, 0.342294 )
 frames = SubResource( 2 )
 animation = "walk"
-playing = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
 
 [node name="Walk" type="Node" parent="StateMachine"]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
+sprite = NodePath("../../Sprite")
 
 [node name="Fly" type="Node" parent="StateMachine"]
-script = ExtResource( 4 )
-floor_height = 350
+script = ExtResource( 3 )
+gravity = 10.0
+jump_speed = -300.0
+action = "jump"
 
 [node name="Swim" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )
+gravity = -8.0
+jump_speed = 250.0
+action = "dive"
+flip_v = true
+sprite = NodePath("../../Sprite")
