@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://New Project.jpg" type="Texture" id=1]
-[ext_resource path="res://ScrollingBackground.gd" type="Script" id=2]
-[ext_resource path="res://collision/Water_floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/ScrollingBackground/New Project.jpg" type="Texture" id=1]
+[ext_resource path="res://environment/ScrollingBackground/ScrollingBackground.gd" type="Script" id=2]
+[ext_resource path="res://environment/ScrollingBackground/Water_floor.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
