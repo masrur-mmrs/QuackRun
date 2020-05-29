@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Project.jpg-ee87459ef22b325f29ee70b817cbc479.stex"
+path="res://.import/walk2.png-faf99811e4234683f34d8543e22cd298.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/ScrollingBackground/New Project.jpg"
-dest_files=[ "res://.import/New Project.jpg-ee87459ef22b325f29ee70b817cbc479.stex" ]
+source_file="res://Duck/walk2.png"
+dest_files=[ "res://.import/walk2.png-faf99811e4234683f34d8543e22cd298.stex" ]
 
 [params]
 
