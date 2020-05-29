@@ -6,7 +6,7 @@
 [ext_resource path="res://Duck/States/Walk.gd" type="Script" id=4]
 [ext_resource path="res://Duck/walk2.png" type="Texture" id=5]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
 
@@ -15,27 +15,27 @@ func _enter_tree():
 		state.floor_height = global_position.y
 "
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 29.6746
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
 [node name="Duck" type="Area2D"]
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 8.10897, -19.5574 )
+position = Vector2( 5.46821, 7.73044 )
 scale = Vector2( 0.342294, 0.342294 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "walk"
 
 [node name="StateMachine" type="Node" parent="."]
