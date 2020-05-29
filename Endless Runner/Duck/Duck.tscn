@@ -50,6 +50,9 @@ script = ExtResource( 3 )
 gravity = 10.0
 jump_speed = -300.0
 action = "jump"
+sprite = NodePath("../../Sprite")
+rotation_speed_degrees = 70.0
+rotation_degrees = -30.0
 
 [node name="Swim" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
@@ -58,3 +61,5 @@ jump_speed = 250.0
 action = "dive"
 flip_v = true
 sprite = NodePath("../../Sprite")
+rotation_speed_degrees = -70.0
+rotation_degrees = 30.0
