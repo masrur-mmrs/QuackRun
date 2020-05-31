@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Duck/walk1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/StateMachine.gd" type="Script" id=2]
 [ext_resource path="res://Duck/States/Move.gd" type="Script" id=3]
 [ext_resource path="res://Duck/States/Walk.gd" type="Script" id=4]
 [ext_resource path="res://Duck/walk2.png" type="Texture" id=5]
+[ext_resource path="res://Duck/fly.png" type="Texture" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
@@ -20,6 +21,11 @@ radius = 29.6746
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "fly",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
@@ -50,9 +56,6 @@ script = ExtResource( 3 )
 gravity = 10.0
 jump_speed = -300.0
 action = "jump"
-sprite = NodePath("../../Sprite")
-rotation_speed_degrees = 70.0
-rotation_degrees = -30.0
 
 [node name="Swim" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
@@ -61,5 +64,4 @@ jump_speed = 250.0
 action = "dive"
 flip_v = true
 sprite = NodePath("../../Sprite")
-rotation_speed_degrees = -70.0
-rotation_degrees = 30.0
+
