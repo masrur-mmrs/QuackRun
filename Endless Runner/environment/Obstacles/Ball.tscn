@@ -29,7 +29,7 @@ start_height = 40
 gravity_accel = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = -1.1235
+rotation = -3.79898
 scale = Vector2( 0.15782, 0.15782 )
 texture = ExtResource( 1 )
 
