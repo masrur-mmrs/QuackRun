@@ -16,7 +16,9 @@ animations = [ {
 radius = 25.4853
 height = 175.219
 
-[node name="Boat" type="Area2D"]
+[node name="Boat" type="Area2D" groups=[
+"obstacle",
+]]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true

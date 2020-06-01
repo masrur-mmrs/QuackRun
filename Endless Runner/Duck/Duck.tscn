@@ -6,15 +6,7 @@
 [ext_resource path="res://Duck/States/Walk.gd" type="Script" id=4]
 [ext_resource path="res://Duck/walk2.png" type="Texture" id=5]
 [ext_resource path="res://Duck/fly.png" type="Texture" id=6]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Area2D
-
-
-func _enter_tree():
-	for state in $StateMachine.get_children():
-		state.floor_height = global_position.y
-"
+[ext_resource path="res://Duck/Duck.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 29.6746
@@ -38,7 +30,8 @@ animations = [ {
 } ]
 
 [node name="Duck" type="Area2D"]
-script = SubResource( 1 )
+script = ExtResource( 7 )
+score_per_second = 2.0
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -76,3 +69,4 @@ flip_v = true
 sprite = NodePath("../../Sprite")
 rotation_speed_degrees = -60.0
 rotation_degrees = 30.0
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

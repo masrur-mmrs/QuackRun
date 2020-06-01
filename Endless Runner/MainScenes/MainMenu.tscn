@@ -32,15 +32,15 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="VBoxContainer"]
-margin_right = 64.0
+margin_right = 824.0
 margin_bottom = 64.0
 texture = ExtResource( 1 )
 stretch_mode = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
-margin_top = 96.0
-margin_right = 179.0
-margin_bottom = 148.0
+margin_top = 68.0
+margin_right = 824.0
+margin_bottom = 88.0
 text = "PLAY"
 script = SubResource( 1 )
 main_scene_path = "res://MainScenes/World.tscn"

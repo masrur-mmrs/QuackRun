@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="GDScript" id=1]
+script/source = "extends Label
+
+
+func _enter_tree():
+	text = str(int(Globals.score))
+"
+
+[sub_resource type="GDScript" id=2]
 script/source = "extends Button
 
 export(String) var main_scene_path
 
 
-func _on_Button_pressed():
+func _on_Retry_pressed():
+	Globals.score = 0.0
 	get_tree().change_scene(main_scene_path)
 "
 
@@ -31,11 +40,13 @@ margin_bottom = 14.0
 text = "69420"
 align = 1
 valign = 1
+script = SubResource( 1 )
 
 [node name="Retry" type="Button" parent="VBoxContainer"]
 margin_top = 18.0
 margin_right = 1024.0
 margin_bottom = 38.0
 text = "Retry"
-script = SubResource( 1 )
+script = SubResource( 2 )
 main_scene_path = "res://MainScenes/World.tscn"
+[connection signal="pressed" from="VBoxContainer/Retry" to="VBoxContainer/Retry" method="_on_Retry_pressed"]

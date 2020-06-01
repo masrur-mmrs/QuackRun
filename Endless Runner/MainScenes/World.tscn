@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Environment/ScrollingBackground/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Duck/Duck.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Environment/Obstacles/ObjectSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/comic.ttf" type="DynamicFontData" id=4]
 
-[node name="World" type="Node2D"]
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Label
+
+
+func _process(_delta):
+	text = str(int(Globals.score))
+"
+
+[node name="World" type="Node"]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
@@ -13,3 +26,24 @@ position = Vector2( 1111.58, 0 )
 
 [node name="Duck" parent="." instance=ExtResource( 2 )]
 position = Vector2( 238.708, 431.622 )
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD"]
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
