@@ -13,7 +13,7 @@ func _spawn_random_obstacle():
 	if len(obstacles) == 1:
 		obstacle_instance = obstacles[0].instance()
 	else:
-		obstacle_instance = obstacles[randi() % len(obstacles)].instance
+		obstacle_instance = obstacles[randi() % len(obstacles)].instance()
 	
 	add_child(obstacle_instance)
 

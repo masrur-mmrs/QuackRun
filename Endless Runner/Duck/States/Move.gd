@@ -1,5 +1,6 @@
 extends GameState
 
+export(String) var animation
 export(float) var gravity
 export(float) var jump_speed
 export(String) var action
@@ -15,6 +16,7 @@ func enter():
 	_jump()
 	if flip_v:
 		get_node(sprite).flip_v = true
+	get_node(sprite).animation = animation
 
 
 func physics_process(delta):

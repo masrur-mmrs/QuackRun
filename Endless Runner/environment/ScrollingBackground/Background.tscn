@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://environment/ScrollingBackground/New Project.jpg" type="Texture" id=1]
 [ext_resource path="res://environment/ScrollingBackground/ScrollingBackground.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Duck/Duck.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/Obstacles/ObstacleSpawner.gd" type="Script" id=5]
 [ext_resource path="res://Environment/Obstacles/Boat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Environment/Obstacles/Ball.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -97,12 +98,12 @@ scroll_speed = 0.2
 position = Vector2( 237.48, 431.622 )
 
 [node name="ObstacleSpawner" type="Node2D" parent="."]
-position = Vector2( 1110.35, 300 )
+position = Vector2( 1110.35, 0 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
-obstacles = [ ExtResource( 6 ) ]
+obstacles = [ ExtResource( 6 ), ExtResource( 7 ) ]
 
 [node name="Timer" type="Timer" parent="ObstacleSpawner"]
 one_shot = true

@@ -21,14 +21,19 @@ radius = 29.6746
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "fly",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "fly",
 "speed": 5.0
 } ]
 
@@ -42,7 +47,7 @@ shape = SubResource( 2 )
 position = Vector2( 5.46821, 7.73044 )
 scale = Vector2( 0.342294, 0.342294 )
 frames = SubResource( 3 )
-animation = "walk"
+animation = "idle"
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -53,15 +58,21 @@ sprite = NodePath("../../Sprite")
 
 [node name="Fly" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
+animation = "fly"
 gravity = 10.0
 jump_speed = -300.0
 action = "jump"
+sprite = NodePath("../../Sprite")
+rotation_speed_degrees = 60.0
+rotation_degrees = -30.0
 
 [node name="Swim" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
+animation = "idle"
 gravity = -8.0
 jump_speed = 250.0
 action = "dive"
 flip_v = true
 sprite = NodePath("../../Sprite")
-
+rotation_speed_degrees = -60.0
+rotation_degrees = 30.0
