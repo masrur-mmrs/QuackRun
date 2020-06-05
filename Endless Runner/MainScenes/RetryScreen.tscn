@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="GDScript" id=1]
+[ext_resource path="res://MainScenes/retry.png" type="Texture" id=1]
+[ext_resource path="res://MainScenes/death menu.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=2]
 script/source = "extends Label
 
 
@@ -8,7 +11,7 @@ func _enter_tree():
 	text = str(int(Globals.score))
 "
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
 export(String) var main_scene_path
@@ -27,26 +30,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="death menu" type="Sprite" parent="."]
+position = Vector2( 509.585, 297.705 )
+scale = Vector2( 0.851116, 0.931546 )
+texture = ExtResource( 2 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 237.795
+margin_top = 193.51
+margin_right = -74.2048
+margin_bottom = -182.49
+rect_scale = Vector2( 0.774054, 0.774054 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Score" type="Label" parent="VBoxContainer"]
-margin_right = 1024.0
+margin_right = 712.0
 margin_bottom = 14.0
 text = "69420"
 align = 1
 valign = 1
-script = SubResource( 1 )
+script = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Retry" type="Button" parent="VBoxContainer"]
 margin_top = 18.0
-margin_right = 1024.0
-margin_bottom = 38.0
-text = "Retry"
-script = SubResource( 2 )
+margin_right = 712.0
+margin_bottom = 224.0
+icon = ExtResource( 1 )
+flat = true
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 main_scene_path = "res://MainScenes/World.tscn"
 [connection signal="pressed" from="VBoxContainer/Retry" to="VBoxContainer/Retry" method="_on_Retry_pressed"]
