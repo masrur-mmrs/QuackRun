@@ -5,7 +5,7 @@ export(int) var start_height
 
 
 func _enter_tree():
-	position.y = start_height
+	position.y = start_height + 11
 
 
 func _physics_process(delta):

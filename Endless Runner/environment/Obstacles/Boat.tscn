@@ -4,7 +4,7 @@
 [ext_resource path="res://Environment/Obstacles/boat2.png" type="Texture" id=2]
 [ext_resource path="res://Environment/Obstacles/boat1.png" type="Texture" id=3]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
@@ -12,23 +12,20 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 25.4853
-height = 175.219
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28.9616, 118.281 )
 
 [node name="Boat" type="Area2D" groups=[
 "obstacle",
 ]]
+position = Vector2( 0, -19.3853 )
+scale = Vector2( 1.49236, 1.49236 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-speed = Vector2( -150, 0 )
 start_height = 430
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.305596, 0.305596 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -37,4 +34,5 @@ __meta__ = {
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 14.3766 )
 rotation = 1.5708
-shape = SubResource( 3 )
+scale = Vector2( 1.16082, 1 )
+shape = SubResource( 2 )

@@ -45,6 +45,7 @@ tracks/0/keys = {
 [node name="World" type="Node"]
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7.07171, -66.2326 )
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1111.58, 0 )
@@ -53,7 +54,7 @@ position = Vector2( 1111.58, 0 )
 obstacles = [ ExtResource( 5 ) ]
 
 [node name="Duck" parent="." instance=ExtResource( 2 )]
-position = Vector2( 238.708, 431.622 )
+position = Vector2( 230.916, 392.662 )
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
