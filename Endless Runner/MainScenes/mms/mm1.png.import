@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/boat2.png-520159e2072d7907e2c120c3a4b121e2.stex"
+path="res://.import/mm1.png-30e28b8c18e636b95260f4cd63f69ddd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/Obstacles/boat2.png"
-dest_files=[ "res://.import/boat2.png-520159e2072d7907e2c120c3a4b121e2.stex" ]
+source_file="res://MainScenes/mms/mm1.png"
+dest_files=[ "res://.import/mm1.png-30e28b8c18e636b95260f4cd63f69ddd.stex" ]
 
 [params]
 
