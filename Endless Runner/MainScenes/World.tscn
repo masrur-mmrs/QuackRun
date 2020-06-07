@@ -11,36 +11,37 @@ size = 50
 font_data = ExtResource( 4 )
 
 [sub_resource type="GDScript" id=2]
+
+
+
+func _enter_tree():	
+	Globals.score_label = self	
+
+
 script/source = "extends Label
-
-
-func _enter_tree():
-	Globals.score_label = self
-
 
 func _process(_delta):
 	text = str(int(Globals.score))
-
-
-func bonus_animation():
+func bonus_animation():	
 	$AnimationPlayer.play(\"bonus\")
 "
 
-[sub_resource type="Animation" id=3]
-resource_name = "bonus"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:custom_fonts/font:size")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 0.420448, 2.46229, 1 ),
-"update": 0,
-"values": [ 50, 150, 50 ]
-}
+[sub_resource type="Animation" id=3]	
+resource_name = "bonus"	
+length = 0.4	
+tracks/0/type = "value"	
+tracks/0/path = NodePath(".:custom_fonts/font:size")	
+tracks/0/interp = 2	
+tracks/0/loop_wrap = true	
+tracks/0/imported = false	
+tracks/0/enabled = true	
+tracks/0/keys = {	
+"times": PoolRealArray( 0, 0.2, 0.4 ),	
+"transitions": PoolRealArray( 0.420448, 2.46229, 1 ),	
+"update": 0,	
+"values": [ 50, 150, 50 ]	
+}	
+
 
 [node name="World" type="Node"]
 
@@ -48,8 +49,7 @@ tracks/0/keys = {
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1111.58, 0 )
-
-[node name="PowerupSpawner" parent="." instance=ExtResource( 3 )]
+[node name="PowerupSpawner" parent="." instance=ExtResource( 3 )]	
 obstacles = [ ExtResource( 5 ) ]
 
 [node name="Duck" parent="." instance=ExtResource( 2 )]
@@ -76,5 +76,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Score"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Score"]	
 anims/bonus = SubResource( 3 )
