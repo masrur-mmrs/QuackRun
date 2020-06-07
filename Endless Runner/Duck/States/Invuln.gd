@@ -7,9 +7,12 @@ var inside_obstacle = false
 # This isnt used but removing will destroy EVERYTHING
 var floor_height
 
+signal entered(duration)
+signal exited
 
 func enter():
 	$Timer.start(duration)
+	emit_signal("entered", duration)
 
 
 func physics_process(_delta):
@@ -17,6 +20,7 @@ func physics_process(_delta):
 	if !$Timer.is_stopped():
 		return
 	if !inside_obstacle:
+		emit_signal("exited")
 		fsm.back()
 
 
