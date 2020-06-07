@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Duck/walk1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/StateMachine.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Duck/walk2.png" type="Texture" id=5]
 [ext_resource path="res://Duck/fly.png" type="Texture" id=6]
 [ext_resource path="res://Duck/Duck.gd" type="Script" id=7]
+[ext_resource path="res://Duck/States/Invuln.gd" type="Script" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.6746
@@ -32,6 +33,7 @@ animations = [ {
 [node name="Duck" type="Area2D" groups=[
 "duck",
 ]]
+collision_layer = 3
 script = ExtResource( 7 )
 score_per_second = 2.0
 
@@ -71,4 +73,14 @@ flip_v = true
 sprite = NodePath("../../Sprite")
 rotation_speed_degrees = -60.0
 rotation_degrees = 30.0
+
+[node name="Invuln" type="Node" parent="StateMachine"]
+script = ExtResource( 8 )
+
+[node name="Timer" type="Timer" parent="StateMachine/Invuln"]
+one_shot = true
+[connection signal="area_entered" from="." to="StateMachine/Invuln" method="_on_Duck_area_entered"]
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="StateMachine/Invuln" method="_on_Duck_area_exited"]
+[connection signal="entered" from="StateMachine/Invuln" to="." method="_on_Invuln_entered"]
+[connection signal="exited" from="StateMachine/Invuln" to="." method="_on_Invuln_exited"]

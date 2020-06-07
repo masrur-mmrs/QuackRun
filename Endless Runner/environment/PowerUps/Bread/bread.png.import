@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bread.png-bcd1da829efd543d541c23db46883689.stex"
+path="res://.import/bread.png-63350ebfaa30feac94f330282471e8b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/Obstacles/bread.png"
-dest_files=[ "res://.import/bread.png-bcd1da829efd543d541c23db46883689.stex" ]
+source_file="res://Environment/PowerUps/Bread/bread.png"
+dest_files=[ "res://.import/bread.png-63350ebfaa30feac94f330282471e8b5.stex" ]
 
 [params]
 

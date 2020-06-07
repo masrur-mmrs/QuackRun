@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Environment/PowerUps/BonusScore.gd" type="Script" id=1]
-[ext_resource path="res://Environment/Obstacles/bread.png" type="Texture" id=2]
+[ext_resource path="res://Environment/PowerUps/Bread/BonusScore.gd" type="Script" id=1]
+[ext_resource path="res://Environment/PowerUps/Bread/bread.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.5442, 25.6374 )
@@ -23,6 +23,8 @@ tracks/0/keys = {
 }
 
 [node name="Bread" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
 start_height = 10
 
