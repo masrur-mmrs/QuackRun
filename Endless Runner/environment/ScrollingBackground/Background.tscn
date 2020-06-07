@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://environment/ScrollingBackground/New Project.jpg" type="Texture" id=1]
 [ext_resource path="res://environment/ScrollingBackground/ScrollingBackground.gd" type="Script" id=2]
-[ext_resource path="res://environment/ScrollingBackground/block.jpg" type="Texture" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -23,7 +22,6 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 
 [sub_resource type="TileSet" id=4]
 0/name = "block.jpg 0"
-0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 80, 80 )
