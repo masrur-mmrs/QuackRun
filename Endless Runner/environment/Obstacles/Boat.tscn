@@ -26,6 +26,7 @@ start_height = 430
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.305596, 0.305596 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true

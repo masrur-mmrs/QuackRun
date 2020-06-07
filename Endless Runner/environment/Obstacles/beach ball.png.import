@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beach ball.png-21058f76fecdc98776bd095ecc09275c.stex"
+path="res://.import/beach ball.png-94eb61c9a855b7d837544fe32aa42121.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://environment/Obstacles/beach ball.png"
-dest_files=[ "res://.import/beach ball.png-21058f76fecdc98776bd095ecc09275c.stex" ]
+source_file="res://Environment/Obstacles/beach ball.png"
+dest_files=[ "res://.import/beach ball.png-94eb61c9a855b7d837544fe32aa42121.stex" ]
 
 [params]
 
