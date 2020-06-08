@@ -22,6 +22,7 @@ rotate = true
 position = Vector2( 0.710411, 0.128445 )
 scale = Vector2( 0.409824, 0.409824 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 scale = Vector2( 10.8023, 1.01809 )
