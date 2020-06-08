@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://environment/Obstacles/StraightLine.gd" type="Script" id=1]
+[ext_resource path="res://environment/Obstacles/Crab.gd" type="Script" id=1]
 [ext_resource path="res://environment/Obstacles/crab_eyes_open.png" type="Texture" id=2]
 [ext_resource path="res://environment/Obstacles/crab_eyes_close.png" type="Texture" id=3]
 
@@ -19,7 +19,9 @@ animations = [ {
 ]]
 scale = Vector2( 0.399243, 0.399243 )
 script = ExtResource( 1 )
-start_height = 430
+start_height = 400
+gravity_accel = -100
+ceiling_height = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.514761, 0.514761 )
