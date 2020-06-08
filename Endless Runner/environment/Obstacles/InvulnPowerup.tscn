@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://environment/Obstacles/sandwich3.png" type="Texture" id=1]
+[ext_resource path="res://environment/Obstacles/sandwich2.png" type="Texture" id=2]
+[ext_resource path="res://environment/Obstacles/sandwich1.png" type="Texture" id=3]
+[ext_resource path="res://environment/Obstacles/sandwich4.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30.704, 28.8613 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="InvulnPowerup" type="Area2D"]
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Shape"]
+scale = Vector2( 0.089717, 0.089717 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+[connection signal="area_entered" from="." to="." method="_on_InvulnPowerup_area_entered"]
