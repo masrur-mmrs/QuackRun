@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shark.png-9d6e69e69d19ae735ee5f823d382a17a.stex"
+path="res://.import/shark.png-0aa1a64c097f6fc1ccc3947cad07499d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Obstacles/shark.png"
-dest_files=[ "res://.import/shark.png-9d6e69e69d19ae735ee5f823d382a17a.stex" ]
+source_file="res://environment/Obstacles/shark.png"
+dest_files=[ "res://.import/shark.png-0aa1a64c097f6fc1ccc3947cad07499d.stex" ]
 
 [params]
 
