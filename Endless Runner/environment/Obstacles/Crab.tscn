@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://environment/Obstacles/StraightLine.gd" type="Script" id=1]
+[ext_resource path="res://environment/Obstacles/crab_eyes_open.png" type="Texture" id=2]
+[ext_resource path="res://environment/Obstacles/crab_eyes_close.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="Crab" type="Area2D" groups=[
+"obstacle",
+]]
+scale = Vector2( 0.399243, 0.399243 )
+script = ExtResource( 1 )
+start_height = 430
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.514761, 0.514761 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.65369, -38.4784 )
+scale = Vector2( 17.2329, 9.13441 )
+shape = SubResource( 2 )
