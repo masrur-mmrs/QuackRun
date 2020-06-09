@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Environment/ScrollingBackground/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Duck/Duck.tscn" type="PackedScene" id=2]
@@ -7,6 +7,19 @@
 [ext_resource path="res://Environment/PowerUps/Bread/Bread.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Environment/ScrollingBackground/block.jpg" type="Texture" id=6]
 [ext_resource path="res://Environment/PowerUps/InvulnPowerup/InvulnPowerup.tscn" type="PackedScene" id=7]
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Node
+
+
+func _ready():
+	Globals.score = 0
+	Globals.time_since_start = 0
+
+
+func _process(delta):
+	Globals.time_since_start += delta
+"
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -60,12 +73,15 @@ func _on_Duck_show_timer(duration):
 "
 
 [node name="World" type="Node"]
+script = SubResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7.07171, -66.2326 )
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1111.58, 0 )
+biased = true
+biases = [ 3, 6, 2, 2 ]
 
 [node name="PowerupSpawner" parent="." instance=ExtResource( 3 )]
 obstacles = [ ExtResource( 5 ), ExtResource( 7 ) ]

@@ -16,7 +16,6 @@ func enter():
 
 
 func physics_process(_delta):
-	print($Timer.time_left)
 	if !$Timer.is_stopped():
 		return
 	if !inside_obstacle:
