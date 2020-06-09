@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://environment/Obstacles/StraightLine.gd" type="Script" id=1]
 [ext_resource path="res://environment/Obstacles/crab_eyes_open.png" type="Texture" id=2]
@@ -14,14 +14,42 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=2]
 
+[sub_resource type="Animation" id=3]
+resource_name = "scuttle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -7.0, 7.0 ]
+}
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends AnimationPlayer
+
+func _enter_tree():
+	play(\"scuttle\")
+"
+
 [node name="Crab" type="Area2D" groups=[
 "obstacle",
 ]]
 scale = Vector2( 0.399243, 0.399243 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 start_height = 430
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = -0.122173
 scale = Vector2( 0.514761, 0.514761 )
 frames = SubResource( 1 )
 playing = true
@@ -30,3 +58,7 @@ playing = true
 position = Vector2( -2.65369, -38.4784 )
 scale = Vector2( 17.2329, 9.13441 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/scuttle = SubResource( 3 )
+script = SubResource( 4 )
