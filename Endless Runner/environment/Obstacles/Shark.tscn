@@ -13,7 +13,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-start_height = 300
+start_height = 500
 amplitude = 50.0
 period = 0.2
 rotate = true

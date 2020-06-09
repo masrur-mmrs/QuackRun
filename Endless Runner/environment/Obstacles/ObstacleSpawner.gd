@@ -6,13 +6,16 @@ export var biased = false
 # A number for each obstacle. Higher means more likely, 0 means spawning disabled
 export(Array, int) var biases
 
-export var interval_seconds = 3
+export var initial_interval_seconds = 3
 export var interval_randomness = 0.5
 
+var interval_seconds
 var biased_obstacle_list = []
 
 
 func _enter_tree():
+	interval_seconds = initial_interval_seconds
+	
 	if !biased:
 		biased_obstacle_list = obstacles
 	else:
@@ -42,4 +45,5 @@ func _new_timer():
 
 func _on_Timer_timeout():
 	_spawn_random_obstacle()
+	interval_seconds = initial_interval_seconds * Globals.interval_multiplier
 	_new_timer()
