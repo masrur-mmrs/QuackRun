@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://environment/Obstacles/StraightLine.gd" type="Script" id=1]
+[ext_resource path="res://environment/Obstacles/Crab.gd" type="Script" id=1]
 [ext_resource path="res://environment/Obstacles/crab_eyes_open.png" type="Texture" id=2]
 [ext_resource path="res://environment/Obstacles/crab_eyes_close.png" type="Texture" id=3]
 
@@ -41,17 +41,21 @@ func _enter_tree():
 [node name="Crab" type="Area2D" groups=[
 "obstacle",
 ]]
+position = Vector2( 5.16968, 2.5848 )
 scale = Vector2( 0.399243, 0.399243 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+start_speed = Vector2( -150, -100 )
 start_height = 430
+gravity_accel = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = -0.122173
 scale = Vector2( 0.514761, 0.514761 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
