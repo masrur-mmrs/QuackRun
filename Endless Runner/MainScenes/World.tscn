@@ -5,10 +5,10 @@
 [ext_resource path="res://Environment/Obstacles/ObjectSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/comic.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Environment/PowerUps/Bread/Bread.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Environment/ScrollingBackground/block.jpg" type="Texture" id=6]
+[ext_resource path="res://environment/Obstacles/bar.png" type="Texture" id=6]
 [ext_resource path="res://Environment/PowerUps/InvulnPowerup/InvulnPowerup.tscn" type="PackedScene" id=7]
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
 
@@ -21,11 +21,26 @@ func _process(delta):
 	Globals.time_since_start += delta
 "
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="GDScript" id=2]
+script/source = "extends TextureProgress
+
+func _process(_delta):
+	if $Timer.is_stopped():
+		value = 0
+	else:
+		value = $Timer.time_left
+
+
+func _on_Duck_show_timer(duration):
+	max_value = duration
+	$Timer.start(duration)
+"
+
+[sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Label
 
 
@@ -41,8 +56,7 @@ func bonus_animation():
 	$AnimationPlayer.play(\"bonus\")
 "
 
-[sub_resource type="Animation" id=3]
-resource_name = "bonus"
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:custom_fonts/font:size")
@@ -57,23 +71,8 @@ tracks/0/keys = {
 "values": [ 50, 150, 50 ]
 }
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends TextureProgress
-
-func _process(_delta):
-	if $Timer.is_stopped():
-		value = 0
-	else:
-		value = $Timer.time_left
-
-
-func _on_Duck_show_timer(duration):
-	max_value = duration
-	$Timer.start(duration)
-"
-
 [node name="World" type="Node"]
-script = SubResource( 5 )
+script = SubResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7.07171, -66.2326 )
@@ -103,32 +102,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="HUD"]
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0"
-script = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Score"]
-anims/bonus = SubResource( 3 )
-
 [node name="PowerupTimer" type="TextureProgress" parent="HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -350.0
-margin_bottom = 40.0
+margin_left = -961.0
+margin_top = -24.0
+margin_right = -493.0
+margin_bottom = 30.0
+rect_scale = Vector2( 0.465113, 3.76859 )
 step = 0.001
 texture_progress = ExtResource( 6 )
-fill_mode = 1
+fill_mode = 5
 nine_patch_stretch = true
-script = SubResource( 4 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="HUD/PowerupTimer"]
 one_shot = true
+
+[node name="Score" type="Label" parent="HUD"]
+margin_left = 32.6909
+margin_top = 28.8497
+margin_right = 63.6909
+margin_bottom = 99.8498
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+script = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/Score"]
+anims/bonus = SubResource( 5 )
 [connection signal="show_timer" from="Duck" to="HUD/PowerupTimer" method="_on_Duck_show_timer"]

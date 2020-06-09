@@ -19,11 +19,12 @@ extents = Vector2( 30.704, 28.8613 )
 
 [node name="InvulnPowerup" type="Area2D"]
 script = ExtResource( 1 )
+start_height = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.0902044, 0.0902044 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]

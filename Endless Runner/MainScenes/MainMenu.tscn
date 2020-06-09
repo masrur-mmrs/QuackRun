@@ -44,7 +44,6 @@ __meta__ = {
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7.072, -66 )
-scroll_speed = 0.0
 
 [node name="Duck" type="Sprite" parent="."]
 position = Vector2( 236, 400 )
