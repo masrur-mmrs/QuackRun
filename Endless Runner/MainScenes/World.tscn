@@ -80,7 +80,7 @@ position = Vector2( 7.07171, -66.2326 )
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1111.58, 0 )
 biased = true
-biases = [ 3, 6, 2, 2 ]
+biases = [ 4, 3, 4, 2 ]
 
 [node name="PowerupSpawner" parent="." instance=ExtResource( 3 )]
 obstacles = [ ExtResource( 5 ), ExtResource( 7 ) ]
