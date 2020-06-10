@@ -86,6 +86,7 @@ biases = [ 4, 3, 4, 2 ]
 obstacles = [ ExtResource( 5 ), ExtResource( 7 ) ]
 biased = true
 biases = [ 5, 1 ]
+initial_interval_seconds = 4
 
 [node name="Duck" parent="." instance=ExtResource( 2 )]
 position = Vector2( 230.916, 392.662 )
