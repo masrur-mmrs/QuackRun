@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Environment/ScrollingBackground/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Duck/Duck.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Environment/PowerUps/InvulnPowerup/InvulnPowerup.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Audio/background_music.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/Bread.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/Invul.wav" type="AudioStream" id=10]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
@@ -107,6 +108,10 @@ initial_interval_seconds = 4
 
 [node name="Duck" parent="." instance=ExtResource( 2 )]
 position = Vector2( 230.916, 392.662 )
+
+[node name="Invul" type="AudioStreamPlayer" parent="Duck"]
+stream = ExtResource( 10 )
+pitch_scale = 2.0
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0

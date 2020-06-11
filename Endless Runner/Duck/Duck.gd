@@ -32,6 +32,7 @@ func _on_area_entered(area):
 
 func _on_Invuln_entered(duration):
 	emit_signal("show_timer", duration)
+	get_node("Invul").play()
 	invuln = true
 
 func _on_Invuln_exited():
