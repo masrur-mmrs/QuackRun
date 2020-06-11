@@ -10,9 +10,13 @@ export(float) var rotation_speed_degrees
 export(float) var rotation_degrees
 export(float) var max_y = 600
 export(float) var min_y = 0
+export(NodePath) var quack_path
+
 var floor_height: int
 var y_vel: float
-onready var quack = $AudioStreamPlayer
+
+#func _ready():
+onready var quack = get_node(quack_path)
 
 func enter():
 	_jump()

@@ -3,7 +3,8 @@ extends GameState
 export(NodePath) var sprite
 export var animation = "walk"
 var floor_height: int
-onready var quack = $AudioStreamPlayer
+export(NodePath) var quack_path
+onready var quack = get_node(quack_path)
 
 func enter():
 	get_node(sprite).playing = true
