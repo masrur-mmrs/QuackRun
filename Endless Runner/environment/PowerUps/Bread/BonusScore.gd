@@ -1,4 +1,4 @@
-extends "res://Environment/Obstacles/StraightLine.gd"
+extends "res://environment/Obstacles/StraightLine.gd"
 
 export var score = 15
 export var remove_on_use = true

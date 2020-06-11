@@ -1,4 +1,4 @@
-extends "res://Environment/Obstacles/StraightLine.gd"
+extends "res://environment/Obstacles/StraightLine.gd"
 
 export var min_y = 5.0
 export var max_y = 550.0

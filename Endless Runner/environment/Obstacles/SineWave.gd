@@ -1,4 +1,4 @@
-extends "res://Environment/Obstacles/StraightLine.gd"
+extends "res://environment/Obstacles/StraightLine.gd"
 
 export(float) var amplitude
 export(float) var period

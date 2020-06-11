@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Environment/PowerUps/InvulnPowerup/InvulnPowerup.gd" type="Script" id=1]
+[ext_resource path="res://environment/PowerUps/InvulnPowerup/InvulnPowerup.gd" type="Script" id=1]
 [ext_resource path="res://environment/Obstacles/sandwich1.png" type="Texture" id=2]
 [ext_resource path="res://environment/Obstacles/sandwich2.png" type="Texture" id=3]
 [ext_resource path="res://environment/Obstacles/sandwich4.png" type="Texture" id=4]
