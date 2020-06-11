@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Duck/walk1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/StateMachine.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Duck/fly.png" type="Texture" id=6]
 [ext_resource path="res://Duck/Duck.gd" type="Script" id=7]
 [ext_resource path="res://Duck/States/Invuln.gd" type="Script" id=8]
+[ext_resource path="res://Audio/quack.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 29.6746
@@ -19,14 +20,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "fly",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -41,7 +42,7 @@ score_per_second = 2.0
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 5.46821, 7.73044 )
+position = Vector2( 2.71021, 4.90933 )
 scale = Vector2( 0.342294, 0.342294 )
 frames = SubResource( 2 )
 animation = "idle"
@@ -53,6 +54,9 @@ script = ExtResource( 2 )
 script = ExtResource( 4 )
 sprite = NodePath("../../Sprite")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Walk"]
+stream = ExtResource( 9 )
+
 [node name="Fly" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
 animation = "fly"
@@ -62,6 +66,9 @@ action = "jump"
 sprite = NodePath("../../Sprite")
 rotation_speed_degrees = 60.0
 rotation_degrees = -30.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Fly"]
+stream = ExtResource( 9 )
 
 [node name="Swim" type="Node" parent="StateMachine"]
 script = ExtResource( 3 )
@@ -73,6 +80,9 @@ flip_v = true
 sprite = NodePath("../../Sprite")
 rotation_speed_degrees = -60.0
 rotation_degrees = 30.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StateMachine/Swim"]
+stream = ExtResource( 9 )
 
 [node name="Invuln" type="Node" parent="StateMachine"]
 script = ExtResource( 8 )

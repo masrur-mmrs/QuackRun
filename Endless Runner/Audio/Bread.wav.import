@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bread.wav-4f9378d585575760f33cae52f508f8d8.sample"
+
+[deps]
+
+source_file="res://Audio/Bread.wav"
+dest_files=[ "res://.import/Bread.wav-4f9378d585575760f33cae52f508f8d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

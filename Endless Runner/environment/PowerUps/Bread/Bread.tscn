@@ -4,7 +4,7 @@
 [ext_resource path="res://Environment/PowerUps/Bread/bread.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.5442, 25.6374 )
+extents = Vector2( 18.5442, 18.1328 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "default"
@@ -29,11 +29,12 @@ script = ExtResource( 1 )
 start_height = 10
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 14.9507 )
+position = Vector2( 0, -15 )
 scale = Vector2( 0.103, 0.103 )
 texture = ExtResource( 2 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -14.3395 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

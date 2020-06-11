@@ -12,7 +12,7 @@ export(float) var max_y = 600
 export(float) var min_y = 0
 var floor_height: int
 var y_vel: float
-
+onready var quack = $AudioStreamPlayer
 
 func enter():
 	_jump()
@@ -38,6 +38,7 @@ func physics_process(delta):
 
 func input(event: InputEvent):
 	if event.is_action_pressed(action):
+		quack.play()
 		_jump()
 
 
